@@ -36,13 +36,12 @@ def get(): #获取当天最新数据，总交易量，涨跌幅
         schedule_time()
 
 def add_list(): #加入当天交易量，涨跌幅。 形成一周，一月的数据列表
-    #schedule.every().day.at("12.01").do(get())
     if (len(volume)>2):
         volume.remove(volume[0])
         quote.remove(quote[0])
     if (len(volume)==2):
-        date.append(str(datetime.datetime.now().today().minute) + ',' + str(datetime.datetime.now().today().second))
-        datetemp.append(str(datetime.datetime.now().today().minute) + ',' + str(datetime.datetime.now().today().second))
+        date.append(str(datetime.datetime.now().today().month) + ',' + str(datetime.datetime.now().today().day))
+        datetemp.append(str(datetime.datetime.now().today().month) + ',' + str(datetime.datetime.now().today().day))
         week_volume.append(int(volume[1])-int(volume[0]))
         r_quote = round((quote[1]-quote[0])*100,5)
         week_quote.append(str(r_quote)+"%")
@@ -55,7 +54,7 @@ def add_list(): #加入当天交易量，涨跌幅。 形成一周，一月的�
     view()
 
 def schedule_time(): #定时爬取
-    schedule.every(5).seconds.do(get)
+    schedule.every().day.at("12.01").do(get())
     while True:
         schedule.run_pending()
 
