@@ -23,7 +23,7 @@ datetemp = [] #每7天的日期
 
 def get(): #获取当天最新数据，总交易量，涨跌幅
     try:
-        url = 'https://data.block.cc/api/v3/price?slug=bitcoin&api_key=NRL9HC7ZSIWQU4JKMFPGUIZJMZFTWAXNH38SSVL1'
+        url = 'https://data.block.cc/api/v3/price?slug=bitcoin&api_key=******************'
         req = requests.get(url=url).text
         json_req = json.loads(req)
         volume.append(json_req[0]['v'])
@@ -117,8 +117,8 @@ def String_email(subject_content,body_content,file,file2,mail_receiver): #将邮
     mail_sender = "****163.com"
     mail_license = "***********"
     mm = MIMEMultipart('related')
-    mm["From"] = "caizilun200101@163.com"
-    mm["to"] = "caizilun200101@163.com"
+    mm["From"] = "**********@163.com"
+    mm["to"] = "***********@163.com"
     mm["Subject"] = Header(subject_content, 'utf-8')
     message_text = MIMEText(body_content, "plain", "utf-8")
     mm.attach(message_text)
