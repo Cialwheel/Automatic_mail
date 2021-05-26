@@ -90,7 +90,7 @@ def view(): #用已有数据线性图观测，并发到邮箱
         plt.title('Summary Changes In Range Of Price Up,Down For 7D')
         plt.plot(week_x,week_y_quote)
         plt.savefig('week_quote.pdf')
-        String_email('一周7天涨跌幅,交易量变化汇总', '', 'week_quote.pdf','week_volume.pdf', 'caizilun200101@163.com')
+        String_email('一周7天涨跌幅,交易量变化汇总', '', 'week_quote.pdf','week_volume.pdf', '**********@163.com')
         delete()
     if (len(month_volume) == 30):
         month_x = date
@@ -109,13 +109,13 @@ def view(): #用已有数据线性图观测，并发到邮箱
         plt.title('Summary Of Changes In Range Of Price Up,Down For 30 Days')
         plt.plot(month_x,month_y_quote)
         plt.savefig('month_quote.pdf')
-        String_email('一月30天涨跌幅，交易量变化汇总', '', 'month_quote.pdf', 'month_volume.pdf', 'caizilun200101@163.com')
+        String_email('一月30天涨跌幅，交易量变化汇总', '', 'month_quote.pdf', 'month_volume.pdf', '*********@163.com')
         delete()
 
 def String_email(subject_content,body_content,file,file2,mail_receiver): #将邮件发到指定邮箱包括主题，内容及附件
     mail_host = "smtp.163.com"
-    mail_sender = "caizilun200101@163.com"
-    mail_license = "FJMUCBVCPEOQGGUK"
+    mail_sender = "****163.com"
+    mail_license = "***********"
     mm = MIMEMultipart('related')
     mm["From"] = "caizilun200101@163.com"
     mm["to"] = "caizilun200101@163.com"
